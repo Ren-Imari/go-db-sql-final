@@ -101,6 +101,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer db.Close()
 
 	store := NewParcelStore(db)
 	service := NewParcelService(store)
